@@ -1,6 +1,6 @@
-# 6-in-1 Hardware Engineering & Purchasing BOM Excel Template Pack
+# 7-in-1 Hardware Engineering & Purchasing BOM Excel Template Pack
 
-This free, open-source pack includes six Excel bill of materials (BOM) layouts for hardware engineering, purchasing, printed circuit board assembly (PCBA), and small manufacturing teams. Save a copy, keep the column headers, and replace the synthetic data with your own parts.
+This free, open-source pack includes seven Excel layouts for bill of materials (BOM) work and supplier quote comparison. It is designed for hardware engineering, purchasing, printed circuit board assembly (PCBA), and small manufacturing teams. Save a copy, keep the column headers, and replace the example rows with your own data.
 
 | Download | Use case | Worksheets | Key columns and conventions |
 | --- | --- | --- | --- |
@@ -10,6 +10,7 @@ This free, open-source pack includes six Excel bill of materials (BOM) layouts f
 | [04 · Multi-level BOM flattener](./templates/04-multi-level-bom-flattener-template.xlsx?raw=true) | Flatten an engineering assembly into a purchasing list and parent-child records. | `Clean BOM`, headers on row 4. | Keep `Level` as an outline such as `1.1.2`. Enter `Qty per Parent` for each immediate parent. |
 | [05 · Multi-BOM consolidation and where-used](./templates/05-multi-bom-where-used-template.xlsx?raw=true) | Combine two production BOMs and see which boards use each component. | `Board_A` and `Board_B`, headers on row 1. | Keep `Part Number` and `UOM` consistent across boards. Enter the per-unit BOM quantity in `Qty per Parent` and set each board's build quantity in the tool. |
 | [06 · BOM approved vendor list and CM quote](./templates/06-bom-avl-approved-vendor-template.xlsx?raw=true) | Compare a contract manufacturer's quote with your approved vendor list (AVL) and flag unapproved sources. | `Master AVL`, `CM Quote`, and `How_To_Use`. Both data sheets have headers on row 1 and five editable example rows. | Keep `IPN` and MPN columns as text to preserve leading zeros. Map `Qty` on both sheets to compare quantities. Leave `Qty` unmapped for a vendor-only audit. |
+| [07 · Supplier RFQ, price breaks, and MOQ](./templates/07-supplier-quote-rfq-comparison-template.xlsx?raw=true) | Compare two supplier quotes and see what minimum order quantities and pack multiples do to the order total. | `RFQ Comparison` and `How_To_Use`. Group headings are on row 2 and column headers on row 3. The sheet includes 15 editable example parts. | Keep `IPN` and `MPN` as text. Enter `Required Qty`, then fill in `MOQ`, `MPQ`, `Price Unit`, and the price-break columns in each supplier group. |
 
 ## Reference checks
 
@@ -22,7 +23,9 @@ Run these checks in your browser with the matching SpecRivet tool.
 5. **Multi-BOM consolidation.** Select both board sheets. Set `Board_A` to build `2` and `Board_B` to build `3`. The purchase rollup calls for **16 × `CAP-100N`** and **9 × `RES-10K`**. The where-used matrix shows each board's contribution. [Consolidate multiple BOMs and check where parts are used](https://specrivet.com/tools/bom-where-used-consolidator)
 6. **Approved vendor audit.** Upload the workbook and select `Master AVL` and `CM Quote`. With the five example rows on each sheet, the preview reports **1 high-risk item** for an unapproved source channel and **1 item to review** for a conditional approval. [Check a CM quote against your approved vendor list](https://specrivet.com/tools/bom-avl-checker)
 
-Find all six browser-based checks on the [SpecRivet home page](https://specrivet.com).
+7. **Supplier quote comparison.** Upload the workbook under Side-by-side comparison and select `RFQ Comparison`. With the example offers and default settings, the split order covers all **15 demand lines** and saves **$16.00** compared with buying them all from the lowest-cost single supplier. [Compare supplier quotes and MOQs in SpecRivet](https://specrivet.com/tools/supplier-quote-moq-analyzer)
+
+Find all seven browser-based checks on the [SpecRivet home page](https://specrivet.com).
 
 ## License
 
