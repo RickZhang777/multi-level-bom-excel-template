@@ -27,6 +27,16 @@ Run these checks in your browser with the matching SpecRivet tool.
 
 Find all seven browser-based checks on the [SpecRivet home page](https://specrivet.com).
 
+## Complete example reports
+
+Each example includes the synthetic input workbook, the complete SpecRivet Excel export, and the settings and arithmetic to check against the source cells.
+
+| Workflow | Demo input | Full Excel report | Verification notes |
+| --- | --- | --- | --- |
+| BOM cost rollup | [Input](./evidence-packs/bom-checker-and-cost-rollup/demo-input.xlsx?raw=true) | [Report](./evidence-packs/bom-checker-and-cost-rollup/full-report.xlsx?raw=true) | [Rollup checks](./evidence-packs/bom-checker-and-cost-rollup/README.md) |
+| BOM revision diff | [Input](./evidence-packs/bom-diff-checker/demo-input.xlsx?raw=true) | [Report](./evidence-packs/bom-diff-checker/full-report.xlsx?raw=true) | [Revision checks](./evidence-packs/bom-diff-checker/README.md) |
+| Supplier quote and MOQ comparison | [Input](./evidence-packs/supplier-quote-moq-analyzer/demo-input.xlsx?raw=true) | [Report](./evidence-packs/supplier-quote-moq-analyzer/full-report.xlsx?raw=true) | [Order cash checks](./evidence-packs/supplier-quote-moq-analyzer/README.md) |
+
 ## License
 
 The templates and README are available under the [MIT License](./LICENSE).
