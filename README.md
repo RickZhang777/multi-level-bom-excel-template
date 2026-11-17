@@ -2,6 +2,9 @@
 
 This free, open-source pack includes seven Excel layouts for bill of materials (BOM) work and supplier quote comparison. It is designed for hardware engineering, purchasing, printed circuit board assembly (PCBA), and small manufacturing teams. Save a copy, keep the column headers, and replace the example rows with your own data.
 
+- **[Material Shortage Calculation & Clear-to-Build Excel Tool](https://specrivet.com/tools/bom-shortage-calculator)** — Net multi-level BOM demand against on-hand stock before kitting.
+- **[Supplier Quote Comparison in Excel (MOQ, Reel Multiples & Price Breaks)](https://specrivet.com/tools/supplier-quote-moq-analyzer)** — Catch full-reel MPQ excess and Minimum Order Value cash traps before cutting POs.
+
 | Download | Use case | Worksheets | Key columns and conventions |
 | --- | --- | --- | --- |
 | [01 · Multi-level BOM cost rollup](./templates/01-multi-level-bom-cost-rollup-template.xlsx?raw=true) | Check an indented assembly and roll up purchase quantities and costs. | `BOM`, headers on row 5. | Store `Item Path` as text with dot-separated paths such as `1`, `1.1`, and `1.1.1`. Keep `Part No` as text to preserve identifiers such as `000123`. `Quantity` is per parent. Enter the unit cost of purchased parts in `Cost Each`. |
