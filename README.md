@@ -40,6 +40,25 @@ Each example includes the synthetic input workbook, the complete SpecRivet Excel
 | BOM revision diff | [Input](./evidence-packs/bom-diff-checker/demo-input.xlsx?raw=true) | [Report](./evidence-packs/bom-diff-checker/full-report.xlsx?raw=true) | [Revision checks](./evidence-packs/bom-diff-checker/README.md) |
 | Supplier quote and MOQ comparison | [Input](./evidence-packs/supplier-quote-moq-analyzer/demo-input.xlsx?raw=true) | [Report](./evidence-packs/supplier-quote-moq-analyzer/full-report.xlsx?raw=true) | [Order cash checks](./evidence-packs/supplier-quote-moq-analyzer/README.md) |
 
+### Clear-to-Build & Material Shortage Sample
+
+Download [clear-to-build-bom-shortage-sample.xlsx](./clear-to-build-bom-shortage-sample.xlsx?raw=true) to work through a 50-unit build of a synthetic desktop audio controller.
+
+- `BOM_Input` lists the finished unit, its two subassembly types, and the purchased parts in 23 BOM rows. Each quantity is per immediate parent.
+- `Inventory_Snapshot` shows on-hand stock and work-order allocations by bin. `Available_Qty` subtracts allocated stock from on-hand stock.
+- `Clear_to_Build_Summary` rolls up the BOM paths, converts stock to BOM units, and calculates required quantities, shortages, and `Max_Buildable_Kits`. The target, quantities, stock, reel size, and attrition rates are editable.
+
+Check four ways a row-by-row shortage calculation can mislead a buyer.
+
+1. **Shared components.** Each unit needs four capacitors on the control board and three on each of its two channel boards. That is ten capacitors per unit. At 50 units with a 5% feeder-loss allowance, the build needs 525 capacitors. Net stock is 493, leaving 32 short.
+2. **Unit-of-measure mismatch.** The net resistor stock of 0.40 reel is 400 pieces at 1,000 pieces per reel. The build needs 357 pieces with the 2% setup-loss allowance. The 25 meters of net wire stock convert to 25,000 millimeters against 15,000 millimeters of demand.
+3. **Allocated work-order stock.** The potentiometer bin holds 58 pieces, with 16 reserved for another work order. The 42 free pieces leave an eight-piece shortage for this build.
+4. **The limiting part.** The long-lead microcontroller has zero on hand, so the current stock supports zero complete kits. Set its on-hand quantity to 50 to see the capacity rise to 42 kits, limited by potentiometers.
+
+This example uses current on-hand stock. Check scheduled receipts against the kitting date and consider order multiples and price breaks when buying shortages. [Companion Excel shortage walkthrough](https://dev.to/rickzhang/material-shortage-calculation-in-excel-4-silent-math-traps-that-stall-small-batch-hardware-builds-2al6)
+
+For your own BOM and stock snapshot, align part numbers and units before uploading. The online tool offers a free five-row preview. Zero BOM file retention (processed in server memory and discarded immediately). [SpecRivet BOM Shortage Calculator](https://specrivet.com/tools/bom-shortage-calculator)
+
 ## License
 
 The templates and README are available under the [MIT License](./LICENSE).
